@@ -1,7 +1,15 @@
 <p>listado works!</p>
 
-<h3>Héroe Eliminado</h3>
-{{ heroeEliminado }}
+<div *ngIf="heroeEliminado; else noBorrado">
+    <h3>Heroé Eliminado
+    {{ heroeEliminado }}
+    </h3>
+</div>
+
+<ng-template #noBorrado>
+    <h3>Aún no ha eliminado nada </h3>
+</ng-template>
+
 
 <button (click)="borrarHeroe()">Borrar Heroé</button>
 
